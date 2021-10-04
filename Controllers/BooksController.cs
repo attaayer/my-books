@@ -28,7 +28,7 @@ namespace my_books.Controllers
         }
 
 
-        [HttpPost("get-all-books")]
+        [HttpGet("get-all-books")]
         public IActionResult GetAllBooks()
         {
             var allBooks = _booksService.GetAllBooks();
@@ -36,7 +36,7 @@ namespace my_books.Controllers
         }
 
 
-        [HttpPost("get-book-by-Id/{id}")]
+        [HttpGet("get-book-by-Id/{id}")]
         public IActionResult GetBookById(int id)
         {
             var book = _booksService.GetBookById(id);
@@ -48,6 +48,13 @@ namespace my_books.Controllers
         {
             var updbook = _booksService.UpdateBookById(id, book);
             return Ok(updbook);
+        }
+
+        [HttpDelete("del-book-by-Id/{id}")]
+        public IActionResult DelBookById(int id)
+        {
+            _booksService.DeleteBookById(id);
+            return Ok();
         }
     }
 }
