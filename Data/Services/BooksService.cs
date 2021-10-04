@@ -34,5 +34,12 @@ namespace my_books.Data.Services
             _context.SaveChanges();
         }
 
+        //Get all Books
+        public List<Book> GetAllBooks() => _context.Books.ToList();
+
+        //Get a Book by ID
+        public Book GetBookById(int bookId) => _context.Books.FirstOrDefault(n => n.Id == bookId);
+
+
     }
 }

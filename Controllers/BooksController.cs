@@ -26,5 +26,21 @@ namespace my_books.Controllers
             _booksService.AddBook(book);
             return Ok();
         }
+
+
+        [HttpPost("get-all-books")]
+        public IActionResult GetAllBooks()
+        {
+            var allBooks = _booksService.GetAllBooks();
+            return Ok(allBooks);
+        }
+
+
+        [HttpPost("get-book-by-Id/{id}")]
+        public IActionResult GetBookById(int id)
+        {
+            var book = _booksService.GetBookById(id);
+            return Ok(book);
+        }
     }
 }
