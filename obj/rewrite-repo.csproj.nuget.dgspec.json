@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\my-books.csproj": {}
+    "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\rewrite-repo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\my-books.csproj": {
+    "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\rewrite-repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\my-books.csproj",
-        "projectName": "my-books",
-        "projectPath": "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\my-books.csproj",
+        "projectUniqueName": "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\rewrite-repo.csproj",
+        "projectName": "rewrite-repo",
+        "projectPath": "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\rewrite-repo.csproj",
         "packagesPath": "C:\\Users\\ikram\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ikram\\source\\repos\\rewrite-repo\\obj\\",
         "projectStyle": "PackageReference",
@@ -56,7 +56,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.2.2, )"
             }
           },
           "imports": [

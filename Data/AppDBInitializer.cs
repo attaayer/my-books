@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using my_books.Data.Models;
+using rewrite_repo.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace my_books.Data
+namespace rewrite_repo.Data
 {
     public class AppDBInitializer
     {
@@ -16,30 +16,18 @@ namespace my_books.Data
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
 
-                if(!context.Books.Any())
+                if(!context.Allocations.Any())
                 {
-                    context.Books.AddRange(new Book()
+                    context.Allocations.AddRange(new Repo()
                     {
-                        Title = "1st Book Title",
-                        Description = "1st Book Description",
-                        IsRead = true,
-                        DateRead = DateTime.Now.AddDays(-10),
-                        Rate = 4,
-                        Genre = "Biography",
-                        Author = "First Author",
-                        CoverUrl = "https://....",
+                        Name = "BNY-REPO-1",
+                        Amount = 400000,
                         DateAdded = DateTime.Now
                     },
-                    new Book()
+                    new Repo()
                     {
-                        Title = "2nd Book Title",
-                        Description = "2nd Book Description",
-                        IsRead = true,
-                        DateRead = DateTime.Now.AddDays(-10),
-                        Rate = 4,
-                        Genre = "Biography",
-                        Author = "Second Author",
-                        CoverUrl = "https://....",
+                        Name = "BNY-REPO-2",
+                        Amount = 600000,
                         DateAdded = DateTime.Now
                     });
 

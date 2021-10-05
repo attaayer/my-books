@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "my_books": {
+    "rewrite_repo": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

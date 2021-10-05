@@ -8,14 +8,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using my_books.Data;
-using my_books.Data.Services;
+using rewrite_repo.Data;
+using rewrite_repo.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace my_books
+namespace rewrite_repo
 {
     public class Startup
     {
@@ -39,11 +39,11 @@ namespace my_books
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
 
             //Configure the Services
-            services.AddTransient<BooksService>();
+            services.AddTransient<RepoService>();
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "my_books", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "rewrite_repo", Version = "v1" });
             });
         }
 
@@ -54,7 +54,7 @@ namespace my_books
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "my_books v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "rewrite_repo v1"));
             }
 
             app.UseHttpsRedirection();
