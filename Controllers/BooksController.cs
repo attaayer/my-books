@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using my_books.Data.Models;
 using my_books.Data.Services;
 using my_books.Data.ViewModels;
 using System;
@@ -39,8 +40,32 @@ namespace my_books.Controllers
         [HttpGet("get-book-by-Id/{id}")]
         public IActionResult GetBookById(int id)
         {
-            var book = _booksService.GetBookById(id);
-            return Ok(book);
+            var _book = _booksService.GetBookById(id);
+            if (_book != null)
+            {
+                return Ok(_book);
+            }
+            else
+            {
+                return NotFound(); // This will give 404 error much better with IActionResult.
+            }
+            //return Ok(_book);
+        }
+
+        [HttpGet("get-a-book-by-Id/{id}")]
+        public Book GetABookById(int id)
+        {
+            var _book = _booksService.GetBookById(id);
+            //return Ok(book);
+
+            if( _book != null)
+            {
+                return _book;
+            }
+            else
+            { 
+                return null; // Even this is returning 204 something but empty data but still something.
+            }
         }
 
         [HttpPut("upd-book-by-Id/{id}")]
